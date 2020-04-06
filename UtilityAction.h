@@ -117,7 +117,7 @@ public:
 		for(std::tuple<float, float, float> rbm : rank_bonus_multipliers)
 		{
 			total_bonus *= std::get<1>(rbm);
-			std::cout << "Total bonus: " << total_bonus << std::endl;
+			//std::cout << "Total bonus: " << total_bonus << std::endl;
 			total_mult *= std::get<2>(rbm);
 		}
 		//Multiplying all normalized bonuses together, we need to account for having multiple considerations that will
@@ -126,7 +126,7 @@ public:
 		float makeupValue = (1.f - total_bonus) * modificationFactor;
 		total_bonus = total_bonus + (makeupValue * total_bonus);
 		m_weight = total_bonus * total_mult;
-		std::cout << "Weight: " << m_weight << std::endl;
+		//std::cout << "Weight: " << m_weight << std::endl;
 	}
 
 	void update()
